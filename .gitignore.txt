@@ -1,0 +1,45 @@
+# Maven
+target/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Compiled files
+*.class
+
+# Logs
+*.log
+
+# TestNG reports
+test-output/
+
+# Maven reports
+surefire-reports/
+failsafe-reports/
+
+# Cucumber reports
+cucumber-report/
+cucumber-reports/
+
+# Allure
+allure-results/
+allure-report/
+
+# Screenshots
+screenshots/
+
+# Videos
+videos/
+
+# OS files
+.DS_Store
+Thumbs.db
