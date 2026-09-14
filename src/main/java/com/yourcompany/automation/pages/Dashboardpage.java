@@ -30,19 +30,22 @@ public class Dashboardpage {
 	        	 	 return users;
 	          }
 	          
-	          public void getProducts() {
+	          public String getProducts() {
 	        	  String product= driver.findElement(products).getText();
 	        	  System.out.println(product);
+	        	  return product;
 	          }
 	          
-	          public void getOrderToday() {
+	          public String getOrderToday() {
 	        	  String orders=driver.findElement(orderToday).getText();
 	        	  System.out.println(orders);
+	        	  return orders;
 	          }
 	          
-	          public void getRevenue() {
+	          public String getRevenue() {
 	        	  String revenues = driver.findElement(revenue).getText();
 	        	  System.out.println(revenues);
+	        	  return revenues;
 	          }
 	          
 	          

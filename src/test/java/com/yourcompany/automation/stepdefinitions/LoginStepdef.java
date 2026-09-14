@@ -32,4 +32,17 @@ public class LoginStepdef {
 	public void the_dashboard_should_be_displayed() {
 	    
 	}
+	
+	
+	@Given("user logged into the application")
+	public void user_logged_into_the_application() throws InterruptedException {
+	   loginPage.enterUrl(ConfigReader.get("url"));
+	   loginPage.enterUsername(ConfigReader.get("username"));
+	    loginPage.enterPassword(ConfigReader.get("password"));
+	    Thread.sleep(5000);
+	    loginPage.clickLogin();
+	}
+	
+	
+	
 }

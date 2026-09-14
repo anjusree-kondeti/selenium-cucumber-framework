@@ -9,3 +9,8 @@ When the user enters the valid username and password
 And click on the login button
 
 Then the dashboard should be displayed
+
+Scenario:successfullylogged in
+
+Given user logged into the application
+
