@@ -3,15 +3,15 @@ Feature:dashboard
 
 Scenario: dashboard verification
 
-Given user logged into the application
+Given I logged into the application
 
-Then user verifies total users 
+Then I verifies total users 
 
-And user verifies products 
+And I verifies products 
 
-And user verifies today orders 
+And I verifies today orders 
 
-And user verifies revenue 
+And I verifies revenue 
 
 
 
