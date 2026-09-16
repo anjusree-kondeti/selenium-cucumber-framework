@@ -24,20 +24,18 @@ public class UsersStepdef {
 	}
 
 	@Then("I verify user {string} is found")
-	public void i_verify_user_is_found(String user) {
+	public void i_verify_user_is_found(String user) throws InterruptedException  {
 	    userpage.verifyUser(user);
 	}
 
-	@When("I adds the new user")
-	public void i_adds_the_new_user() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@When("I adds the new user {string}")
+	public void i_adds_the_new_user(String user) {
+	   userpage.newUser(user);
 	}
 
-	@Then("I verifies the new user")
-	public void i_verifies_the_new_user() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@Then("I verifies the new user {string}")
+	public void i_verifies_the_new_user(String user) {
+	    userpage.verifyNewUser(user);
 	}
 
 }

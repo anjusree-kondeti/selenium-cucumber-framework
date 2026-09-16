@@ -41,7 +41,6 @@ public class LoginStepdef {
 	   loginPage.enterUrl(ConfigReader.get("url"));
 	   loginPage.enterUsername(ConfigReader.get("username"));
 	    loginPage.enterPassword(ConfigReader.get("password"));
-	    Thread.sleep(5000);
 	    loginPage.clickLogin();
 	}
 	
