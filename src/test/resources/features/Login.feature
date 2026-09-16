@@ -12,5 +12,5 @@ Then the dashboard should be displayed
 
 Scenario:successfullylogged in
 
-Given user logged into the application
+Given I logged into the application
 

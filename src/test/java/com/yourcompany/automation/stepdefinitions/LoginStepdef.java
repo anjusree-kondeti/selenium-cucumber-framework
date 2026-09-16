@@ -9,9 +9,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginStepdef {
-      Loginpage loginPage = new Loginpage(DriverFactory.getDriver());
+      Loginpage loginPage;
 	@Given("user is on the login page")
 	public void user_is_on_the_login_page() {
+		loginPage = new Loginpage(DriverFactory.getDriver());
 	   loginPage.enterUrl(ConfigReader.get("url"));
 	}
 
@@ -34,12 +35,12 @@ public class LoginStepdef {
 	}
 	
 	
-	@Given("user logged into the application")
+	@Given("I logged into the application")
 	public void user_logged_into_the_application() throws InterruptedException {
+		loginPage = new Loginpage(DriverFactory.getDriver());
 	   loginPage.enterUrl(ConfigReader.get("url"));
 	   loginPage.enterUsername(ConfigReader.get("username"));
 	    loginPage.enterPassword(ConfigReader.get("password"));
-	    Thread.sleep(5000);
 	    loginPage.clickLogin();
 	}
 	
