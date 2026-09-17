@@ -1,8 +1,10 @@
 Feature: users
+
+Background:
+    Given I logged into the application
+    
 @SearchUser
 Scenario Outline: searchuser
-
-Given I logged into the application
 
 When I clicks on user menu 
 
@@ -17,8 +19,6 @@ Examples:
 |Arun 3 |
 @Useradd
 Scenario: adduser
-
-Given I logged into the application
 
 When I clicks on user menu 
 
