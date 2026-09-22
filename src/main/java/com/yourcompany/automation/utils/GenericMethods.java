@@ -9,17 +9,17 @@ public class GenericMethods {
 	
 	
 	
-	public static void click(By locator) {
+	public  void click(By locator) {
 		DriverFactory.getDriver().findElement(locator).click();
     	}
     
-    public static String text(By locator) {
+    public  String text(By locator) {
     	String text= DriverFactory.getDriver().findElement(locator).getText();
     	return text;
     }
     
      
-    public static void enterText(By locator,String text) {
+    public void enterText(By locator,String text) {
     	DriverFactory.getDriver().findElement(locator).sendKeys(text);
     }
 

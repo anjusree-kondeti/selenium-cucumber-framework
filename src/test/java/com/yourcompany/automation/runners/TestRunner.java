@@ -12,7 +12,7 @@ import org.testng.annotations.Parameters;
                 "com.yourcompany.automation.stepdefinitions",
                 "com.yourcompany.automation.hooks"
         },
-        tags = "@DropDowns",
+        tags = "@Mouseactions",
         plugin = {
                 "pretty",
                 "html:target/cucumber-report.html"

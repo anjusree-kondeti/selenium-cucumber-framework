@@ -3,6 +3,7 @@ package com.yourcompany.automation.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
@@ -28,6 +29,14 @@ public class SeleniumLocatorspage {
 	private By radioButton=By.xpath("//input[@value='Female']");
 	private By checkBox=By.xpath("//input[@value='Java']");
 	private By selectCountry=By.xpath("//select[@id='country']");
+	private By selectCity=By.xpath("//select[@id='city']");
+	private By hoverMe=By.xpath("//div[@id='hoverMenu']");
+    private By hoverText=By.xpath("//span[@id='hoverText']");
+    private By rightClick=By.xpath("//button[@id='rightClickButton']");
+    private By rText=By.xpath("//p[@id='mouseMessage']");
+    private By doubleClick=By.xpath("//button[@id='doubleClickButton']");
+    private By doubleText=By.xpath("//p[@id='mouseMessage']");
+	
 	
 	
 	public void logIntoApplication(String url) {
@@ -67,13 +76,8 @@ public class SeleniumLocatorspage {
 	}
 	
 	
-	public void clickButton() {
-		genericmethods.click(radioButton);
-	}
-	
-	
-	public void verifyButton() {
-		WebElement fBtn=driver.findElement(radioButton);
+	public void clickButton(String radioButton) {
+		WebElement fBtn=driver.findElement(By.xpath("//input[@value=" +"'"+radioButton+"'"+"]")); //By.xpath("//input[@value='Female']");
 		boolean b= fBtn.isDisplayed();
 		if(b) {
 			System.out.println("displayed");
@@ -82,7 +86,12 @@ public class SeleniumLocatorspage {
 		else {
 			System.out.println("not displayed");
 		}
-		
+	}
+	
+	
+	public void verifyButton() {
+		WebElement fBtn=driver.findElement(radioButton);
+				
 		boolean s= fBtn.isSelected();
 		if(s) {
 			System.out.println("selected");
@@ -93,12 +102,6 @@ public class SeleniumLocatorspage {
 	
 	
 	public void clickBox() {
-		genericmethods.click(checkBox);
-	}
-	
-	
-	
-	public void verifyCheckBox() {
 		WebElement cBox=driver.findElement(checkBox);
 		boolean b =cBox.isDisplayed();
 		if(b) {
@@ -107,6 +110,12 @@ public class SeleniumLocatorspage {
 		}else {
 			System.out.println("not diaplyed");
 		}
+	
+	}
+	
+	public void verifyCheckBox() {
+		WebElement cBox=driver.findElement(checkBox);
+		
 		
 		boolean s =cBox.isSelected();
 		if(s) {
@@ -122,10 +131,54 @@ public class SeleniumLocatorspage {
 		WebElement countryDropdown = driver.findElement(selectCountry);
 		Select select = new Select(countryDropdown);
 		select.selectByIndex(1);
+		 WebElement cityDropDown=driver.findElement(selectCity);
+			cityDropDown.click();
+	driver.findElement(By.xpath("//option[text()='Bangalore']")).click();
+			cityDropDown.click();
+	    
+		
 	}
 	
 	
-	public void verifyDropDown() {
+   public void verifyDropDown(String text) {
+	  
+		String actualText=driver.findElement(By.xpath("//option[text()='Bangalore']")).getText();
+		Assert.assertEquals(actualText,text);
+	}
+	
+	
+	
+	
+	public void mouseActions() {
+		Actions actions = new Actions(driver);
+		WebElement mouseHoverMe=driver.findElement(hoverMe);
+		actions.moveToElement(mouseHoverMe).perform();
+		WebElement text=driver.findElement(hoverText);
+		WebElement rClick=driver.findElement(rightClick);
+		actions.contextClick(rClick).perform();
+		WebElement rightText=driver.findElement(rText);
+		WebElement dClick=driver.findElement(doubleClick);
+		actions.doubleClick(dClick);
+		WebElement dText=driver.findElement(doubleText);
+	}
+	
+	
+	
+	public void verifyMouseActions(String hoverMouseText) {
+		Actions actions = new Actions(driver);
+		WebElement mouseHoverMe=driver.findElement(hoverMe);
+		actions.moveToElement(mouseHoverMe).perform();
+		
+		WebElement text=driver.findElement(hoverText);		
+		boolean h=text.isDisplayed();
+		if(h) {
+			System.out.println("displayed");
+			
+		}else {
+			System.out.println("not displayed");
+		}
+		String hText= text.getText();
+		Assert.assertEquals(hText, hoverMouseText);
 		
 	}
 	
@@ -133,12 +186,7 @@ public class SeleniumLocatorspage {
 	
 	
 	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	

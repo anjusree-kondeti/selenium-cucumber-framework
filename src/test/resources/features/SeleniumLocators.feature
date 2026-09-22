@@ -22,7 +22,7 @@ Scenario: checking radio buttons
 
 Given I logged into the selenium pratice lab application 
 
-When I click on the radio button 
+When I click on the radio button 'Male'
 
 Then I verify the radio button is selected  
 
@@ -45,6 +45,31 @@ Given I logged into the selenium pratice lab application
 When I select the dropdown value 
 
 Then I verify the dropdown value is selected
+
+
+
+@Mouseactions
+Scenario: performing mouseactions 
+
+Given I logged into the selenium pratice lab application 
+
+When I perform mouse actions 
+
+Then I verify the mouse actions are performed successfully 'Hidden text revealed!'
+
+
+
+@Keyboardactions
+Scenario: performing keyboard actions 
+
+Given I logged into the selenium pratice lab application 
+
+When I perform keyboardactions 
+
+Then I verify the keyboard actions anr performed successfully
+
+
+
 
 
 

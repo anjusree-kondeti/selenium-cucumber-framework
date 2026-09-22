@@ -53,9 +53,9 @@ public class SeleniumLocatorsStepdef {
 	
 	//RADIOBUTTONS
 	
-	@When("I click on the radio button")
-	public void i_click_on_the_radio_button() {
-	   locatorsPage.clickButton();
+	@When("I click on the radio button {string}" )
+	public void i_click_on_the_radio_button(String radioButton) {
+	   locatorsPage.clickButton(radioButton);
 	}
 
 	@Then("I verify the radio button is selected")
@@ -90,9 +90,44 @@ public class SeleniumLocatorsStepdef {
 
 	@Then("I verify the dropdown value is selected")
 	public void i_verify_the_dropdown_value_is_selected() {
+		locatorsPage.verifyDropDown("Bangalore");
+	}
+	
+	
+	
+	
+	
+	//MOUSEACTIONS
+	
+	@When("I perform mouse actions")
+	public void i_perform_mouse_actions() {
+	   locatorsPage.mouseActions();
+	}
+
+	@Then("I verify the mouse actions are performed successfully {string}")
+	public void i_verify_the_mouse_actions_are_performed_successfully(String text) {
+		locatorsPage.verifyMouseActions(text);
+	}
+
+	
+	
+	
+	//KEYBOARDACTIONS
+	
+	@When("I perform keyboardactions")
+	public void i_perform_keyboardactions() {
 	    // Write code here that turns the phrase above into concrete actions
 	    throw new io.cucumber.java.PendingException();
 	}
+
+	@Then("I verify the keyboard actions anr performed successfully")
+	public void i_verify_the_keyboard_actions_anr_performed_successfully() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+
+	
 
 
 
