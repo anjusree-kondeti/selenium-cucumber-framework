@@ -1,3 +1,4 @@
+@Regression
 Feature: users
 @SearchUser
 Scenario Outline: searchuser
