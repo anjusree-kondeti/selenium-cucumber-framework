@@ -36,7 +36,7 @@ public class LoginStepdef {
 	
 	
 	@Given("I logged into the application")
-	public void user_logged_into_the_application() throws InterruptedException {
+	public void i_logged_into_the_application() throws InterruptedException {
 		loginPage = new Loginpage(DriverFactory.getDriver());
 	   loginPage.enterUrl(ConfigReader.get("url"));
 	   loginPage.enterUsername(ConfigReader.get("username"));
